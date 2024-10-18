@@ -20,6 +20,15 @@ with references to its surrounding state (the lexical environment).
 In other words, a closure gives you access to an outer function’s scope 
 from an inner function." Create a closure so that you can track the dragged element*/
 
+document.querySelectorAll(".plant").forEach((plant) => {
+  // 더블클릭 시 z-index를 높여 container 위로 가져옴
+  plant.ondblclick = (e) => {
+    e.target.style.zIndex = 10; // container보다 높은 z-index
+  };
+
+  dragElement(plant); // 기존 드래그 기능 유지
+});
+
 function dragElement(terrariumElement) {
   //set 4 positions for positioning on the screen
   let pos1 = 0,
@@ -60,5 +69,24 @@ function dragElement(terrariumElement) {
     // stop calculating when mouse is released
     document.onpointerup = null;
     document.onpointermove = null;
+
+    // 드래그가 끝난 후, plant가 container 안에 있는지 확인
+    if (isInsideJarWalls(terrariumElement)) {
+      terrariumElement.style.zIndex = 0; // 원래 z-index로 복구
+    }
+  }
+
+  // 요소가 jar-walls 안에 있는지 여부를 확인하는 함수
+  function isInsideJarWalls(element) {
+    const jarWalls = document.querySelector(".jar-walls");
+    const rect = element.getBoundingClientRect();
+    const jarRect = jarWalls.getBoundingClientRect();
+
+    return (
+      rect.top >= jarRect.top &&
+      rect.left >= jarRect.left &&
+      rect.bottom <= jarRect.bottom &&
+      rect.right <= jarRect.right
+    );
   }
 }
