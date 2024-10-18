@@ -16,7 +16,7 @@ div {
 }
 
 #left-container {
-  background-color: #eee;
+  background: #eee;
   width: 15%;
   left: 0px;
   top: 0px;
@@ -26,25 +26,17 @@ div {
 }
 
 #right-container {
-  background-color: #eee;
+  background: #eee;
   width: 15%;
   right: 0px;
   top: 0px;
   position: absolute;
   height: 100%;
   padding: 10px;
-}
-
-#left-container {
-  left: 0px;
-}
-
-#right-container {
-  right: 0px;
 }
 
 .container {
-  background-color: #eee;
+  background: #eee;
   width: 15%;
   top: 0px;
   position: absolute;
@@ -108,4 +100,24 @@ div {
   left: 20%;
   opacity: 0.7;
   z-index: -1;
+}
+
+.jar-glossy-long {
+  width: 3%;
+  height: 20%;
+  border-radius: 2rem;
+  background: #ddfbff;
+  position: absolute;
+  bottom: 20%;
+  left: 5%;
+}
+
+.jar-glossy-short {
+  width: 3%;
+  height: 5%;
+  border-radius: 2rem;
+  background: #ddfbff;
+  position: absolute;
+  bottom: 45%;
+  left: 5%;
 }
