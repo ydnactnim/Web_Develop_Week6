@@ -11,12 +11,11 @@ div {
   width: 200px;
   height: 100px;
   padding: 10px;
-  border: 2px solid black;
   margin: 20px;
 }
 
 #left-container {
-  background: #eee;
+  /* background: #eee; */
   width: 15%;
   left: 0px;
   top: 0px;
@@ -26,7 +25,7 @@ div {
 }
 
 #right-container {
-  background: #eee;
+  /* background: #eee; */
   width: 15%;
   right: 0px;
   top: 0px;
@@ -36,7 +35,7 @@ div {
 }
 
 .container {
-  background: #eee;
+  /* background: #eee; */
   width: 15%;
   top: 0px;
   position: absolute;
@@ -54,7 +53,7 @@ div {
   position: absolute;
   max-width: 150%;
   max-height: 150%;
-  z-index: 2;
+  z-index: 0;
 }
 
 .jar-walls {
@@ -67,6 +66,7 @@ div {
   left: 20%;
   opacity: 0.5;
   z-index: 1;
+  pointer-events: none;
 }
 
 .jar-top {
